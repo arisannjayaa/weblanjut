@@ -21,12 +21,11 @@
 
     <header>
         <div class="container">
-
             <div class="row vh-100 justify-content-center align-items-center">
-                <div class="col-7">
+                <div class="col-6">
                     <div class="card p-3">
-                        <img src="<?=base_url('assets/img/undraw.svg')?>" alt="" width="50%">
-                        <h1 class="text-center">Selamat Datang di Web Lanjut</h1>
+                        <img class="mx-auto mb-4" src="<?=base_url('assets/img/hologram.svg')?>" alt="" width="30%">
+                        <h5 class="text-center">Selamat Datang di Pemorgraman Web Lanjut</h5>
                     </div>
                 </div>
             </div>
