@@ -40,9 +40,11 @@ class Mahasiswa_model extends CI_Model {
     return $result;
   }
 
-  public function deleteMahasiswa()
+  public function deleteMahasiswa($id)
   {
-    # code...
+    $this->db->where('id_mhs', $id);
+    $result = $this->db->delete('tb_mahasiswa');
+    return $result;
   }
 
   public function editMahasiswa()
@@ -54,7 +56,7 @@ class Mahasiswa_model extends CI_Model {
             'tlp_mhs' => $this->input->post('tlp'),
             'alamat_mhs' => $this->input->post('alamat')
     );
-    $this->db->where('id_mhs', $this->input->post('id_mhs'));
+    $this->db->where('id_mhs', $this->input->post('id'));
     $result = $this->db->update('tb_mahasiswa', $edit);
     return $result;
   }

@@ -35,8 +35,14 @@ class Mahasiswa extends CI_Controller
   
   public function ubah($id)
   {
-    $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswa($id);
+    $data['mahasiswa'] = $this->Mahasiswa_model->getDetailMahasiswa($id);
     $this->load->view('mahasiswa/update', $data);
+  }
+
+  public function delete($id)
+  {
+    $this->Mahasiswa_model->deleteMahasiswa($id);
+    redirect('mahasiswa');
   }
 
 }

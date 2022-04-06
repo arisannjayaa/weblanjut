@@ -14,10 +14,16 @@
     <div class="container my-4">
         <h3>Update Mahasiswa</h3>
         <hr>
-        <form action="<?=base_url('mahasiswa/ubah')?>" method="post">
+        <form action="<?=base_url('mahasiswa/edit')?>" method="post">
             <table>
                 <?php foreach ($mahasiswa->result_array() as $key) {
                 ?>
+                <tr>
+                    <td>Id</td>
+                    <td>:</td>
+                    <td><input type="text" class="form-control ms-3" name="id" value="<?=$key['id_mhs']?>" readonly>
+                    </td>
+                </tr>
                 <tr>
                     <td>NIM</td>
                     <td>:</td>
@@ -63,7 +69,7 @@
                 } ?>
                 <td><a href="<?=base_url('mahasiswa')?>"><button type="button" class="btn btn-warning ">Kembali</button>
                 </td></a>
-                <td><button type="submit" class="btn btn-primary">Tambah</button></td>
+                <td><button type="submit" class="btn btn-primary">Update</button></td>
             </table>
         </form>
     </div>
