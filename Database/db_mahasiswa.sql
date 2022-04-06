@@ -1,21 +1,23 @@
-create database db_mahasiswa;
+#drop database db_mahasiswa;
 
-create table tb_jurusan(
-	id_jurusan int primary key auto_increment,
-    nama_jurusan varchar(50)
+CREATE DATABASE db_mahasiswa;
+
+CREATE TABLE tb_jurusan(
+    id_jurusan INT PRIMARY KEY AUTO_INCREMENT,
+    nama_jurusan VARCHAR(50)
 );
 
 CREATE TABLE tb_mahasiswa(
-	id_mhs int primary key auto_increment,
-    nim_mhs varchar(15),
-    nama_mhs varchar(50),
-    id_jurusan int,
-    tlp_mhs varchar(15),
-    alamat_mhs varchar(60),
-    foreign key (jurusan) REFERENCES tb_jurusan(id)
+    id_mhs INT PRIMARY KEY AUTO_INCREMENT,
+    nim_mhs VARCHAR(15),
+    nama_mhs VARCHAR(50),
+    id_jurusan INT,
+    tlp_mhs VARCHAR(15),
+    alamat_mhs VARCHAR(60),
+    FOREIGN KEY (id_jurusan) REFERENCES tb_jurusan(id_jurusan)
 );
 
-insert into tb_jurusan(nama) values
+INSERT INTO tb_jurusan(nama_jurusan) VALUES
 ('Teknik Elektro'),
 ('Teknik Sipil'),
 ('Pariwisata'),
