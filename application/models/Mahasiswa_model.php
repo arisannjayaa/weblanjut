@@ -61,8 +61,7 @@ class Mahasiswa_model extends CI_Model {
 
   public function getDetailMahasiswa($id)
   {
-    $this->db->where('id_mhs', $id);
-    $result = $this->db->get('tb_mahasiswa', );
+    $result = $this->db->get_where('tb_mahasiswa', array('id_mhs' => $id));
     return $result;
   }
   // ------------------------------------------------------------------------

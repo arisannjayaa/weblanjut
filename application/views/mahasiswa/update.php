@@ -16,12 +16,14 @@
         <hr>
         <form action="<?=base_url('mahasiswa/ubah')?>" method="post">
             <?php
-        foreach ($mahasiswa as $key) {?>
+            foreach ($mahasiswa as $mhs) {
+            var_dump($mhs);    
+            ?>
             <table>
                 <tr>
                     <td>NIM</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control ms-3" name="nim" value="<?=$key['nim_mhs']?>">
+                    <td><input type="text" class="form-control ms-3" name="nim">
                     </td>
                 </tr>
                 <tr>
