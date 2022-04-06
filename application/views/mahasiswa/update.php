@@ -15,17 +15,19 @@
         <h3>Update Mahasiswa</h3>
         <hr>
         <form action="<?=base_url('mahasiswa/ubah')?>" method="post">
+            <?php
+        foreach ($mahasiswa as $key) {?>
             <table>
                 <tr>
                     <td>NIM</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control ms-3" name="nim" value="<?=$mahasiswa['nim_mhs']?>">
+                    <td><input type="text" class="form-control ms-3" name="nim" value="<?=$key['nim_mhs']?>">
                     </td>
                 </tr>
                 <tr>
                     <td>Nama</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control ms-3" name="nama" value="<?=$mahasiswa['nama_mhs']?>">
+                    <td><input type="text" class="form-control ms-3" name="nama" value="<?=$key['nama_mhs']?>">
                     </td>
                 </tr>
                 <tr>
@@ -45,18 +47,21 @@
                 <tr>
                     <td>Tlp</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control ms-3" name="tlp" value="<?=$mahasiswa['tlp']?>"></td>
+                    <td><input type="text" class="form-control ms-3" name="tlp" value="<?=$key['tlp']?>"></td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
                     <td>:</td>
-                    <td><textarea name="alamat" id="alamat"
-                            class="form-control ms-3"><?=$mahasiswa['alamat']?></textarea></td>
+                    <td><textarea name="alamat" id="alamat" class="form-control ms-3"><?=$key['alamat']?></textarea>
+                    </td>
                 </tr>
                 <td><a href="<?=base_url('mahasiswa')?>"><button type="button" class="btn btn-warning ">Kembali</button>
                 </td></a>
                 <td><button type="submit" class="btn btn-primary">Tambah</button></td>
             </table>
+            <?php
+            }
+            ?>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
