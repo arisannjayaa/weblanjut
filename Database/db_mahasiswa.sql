@@ -7,11 +7,11 @@ create table tb_jurusan(
 
 CREATE TABLE tb_mahasiswa(
 	id_mhs int primary key auto_increment,
-    nim varchar(15),
-    nama varchar(50),
-    jurusan int,
-    tlp varchar(15),
-    alamat varchar(60),
+    nim_mhs varchar(15),
+    nama_mhs varchar(50),
+    id_jurusan int,
+    tlp_mhs varchar(15),
+    alamat_mhs varchar(60),
     foreign key (jurusan) REFERENCES tb_jurusan(id)
 );
 

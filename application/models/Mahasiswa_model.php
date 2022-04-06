@@ -22,18 +22,19 @@ class Mahasiswa_model extends CI_Model {
 
   public function getMahasiswa()
   {
-    $result $this->db->join('tb_jurusan', 'tb_mahasiswa.jurusan = tb_jurusan.id', 'inner');
+    $this->db->join('tb_jurusan', 'tb_mahasiswa.id_jurusan = tb_jurusan.id_jurusan', 'inner');
+    $result = $this->db->get('tb_mahasiswa');
     return $result;
   }
 
   public function insertMahasiswa()
   {
     $insert = array(
-            'nim' => $this->input->post('nim'),
-            'nama' => $this->input->post('nama'),
-            'jurusan' => $this->input->post('jurusan'),
-            'tlp' => $this->input->post('tlp'),
-            'alamat' => $this->input->post('alamat')
+            'nim_mhs' => $this->input->post('nim'),
+            'nama_mhs' => $this->input->post('nama'),
+            'id_jurusan' => $this->input->post('jurusan'),
+            'tlp_mhs' => $this->input->post('tlp'),
+            'alamat_mhs' => $this->input->post('alamat')
     );
     $result = $this->db->insert('tb_mahasiswa', $insert);
     return $result;
@@ -44,9 +45,25 @@ class Mahasiswa_model extends CI_Model {
     # code...
   }
 
-  public function updateMahasiswa()
+  public function editMahasiswa()
   {
-    # code...
+    $edit = array(
+            'nim_mhs' => $this->input->post('nim'),
+            'nama_mhs' => $this->input->post('nama'),
+            'id_jurusan' => $this->input->post('jurusan'),
+            'tlp_mhs' => $this->input->post('tlp'),
+            'alamat_mhs' => $this->input->post('alamat')
+    );
+    $this->db->where('id_mhs', $this->input->post('id_mhs'));
+    $result = $this->db->update('tb_mahasiswa', $edit);
+    return $result;
+  }
+
+  public function getDetailMahasiswa($id)
+  {
+    
+    $result = $this->db->get_where('tb_mahasiswa', ['id_mhs' => $id]);
+    return $result;
   }
   // ------------------------------------------------------------------------
 

@@ -29,12 +29,17 @@
             ?>
             <tr>
                 <td><?=$no++?></td>
-                <td><?=$key['nim']?></td>
-                <td><?=$key['nama']?></td>
-                <td><?=$key['jurusan']?></td>
-                <td><?=$key['tlp']?></td>
-                <td><?=$key['alamat']?></td>
-                <td></td>
+                <td><?=$key['nim_mhs']?></td>
+                <td><?=$key['nama_mhs']?></td>
+                <td><?=$key['nama_jurusan']?></td>
+                <td><?=$key['tlp_mhs']?></td>
+                <td><?=$key['alamat_mhs']?></td>
+                <td>
+                    <a href="<?=base_url('mahasiswa/ubah/'.$key['id_mhs'])?>"><button
+                            class="btn btn-warning">Edit</button></a>
+                    <a href="<?=base_url('mahasiswa/delete/'.$key['id_mhs'])?>"><button
+                            class="btn btn-danger">Hapus</button></a>
+                </td>
             </tr>
             <?php
                 } 
