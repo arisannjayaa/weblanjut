@@ -13,7 +13,7 @@
     <h3>Tambah Mahasiswa</h3>
     <hr>
     <form action="<?=base_url('mahasiswa/add')?>" method="post">
-        <table border="collapse">
+        <table>
             <tr>
                 <td>NIM</td>
                 <td>:</td>
