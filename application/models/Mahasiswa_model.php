@@ -4,17 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mahasiswa_model extends CI_Model {
 
-  // ------------------------------------------------------------------------
-
   public function __construct()
   {
     parent::__construct();
   }
 
-  // ------------------------------------------------------------------------
-
-
-  // ------------------------------------------------------------------------
   public function index()
   {
     
@@ -26,7 +20,7 @@ class Mahasiswa_model extends CI_Model {
     $result = $this->db->get('tb_mahasiswa');
     return $result;
   }
-
+  
   public function insertMahasiswa()
   {
     $insert = array(
