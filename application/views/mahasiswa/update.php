@@ -14,7 +14,7 @@
     <form action="<?=base_url('mahasiswa/edit')?>" method="post">
         <table>
             <?php foreach ($mahasiswa->result_array() as $key) {
-                ?>
+            ?>
             <tr>
                 <td>Id</td>
                 <td>:</td>

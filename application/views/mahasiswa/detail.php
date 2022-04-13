@@ -10,8 +10,9 @@
 </head>
 
 <body>
+    <h2>Data Mahasiswa</h2>
     <a href="mahasiswa/tambah">
-        <h2>Tambah Mahasiswa</h2>
+        <span>Tambah Mahasiswa</span>
     </a>
     <table border="1">
         <tr>
