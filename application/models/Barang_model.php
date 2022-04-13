@@ -30,14 +30,14 @@ class Barang_model extends CI_Model {
     return $result;
   }
 
-  public function deleteMahasiswa($id)
+  public function deleteBarang($id)
   {
     $this->db->where('id_brg', $id);
     $result = $this->db->delete('barang');
     return $result;
   }
 
-  public function editMahasiswa()
+  public function editBarang()
   {
     $edit = array(
           'nama_brg' => $this->input->post('nama'),

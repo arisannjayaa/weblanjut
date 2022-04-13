@@ -11,7 +11,7 @@
 
 <body>
     <h2>Data Barang</h2>
-    <a href="barang/tambah">
+    <a href="<?=base_url('barang/tambah')?>">
         <span>Tambah Barang</span>
     </a>
     <table border="1">

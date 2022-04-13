@@ -27,7 +27,7 @@
             <tr>
                 <td>Deskripsi</td>
                 <td>:</td>
-                <td><textarea name="deskripsi" id="alamat"></textarea></td>
+                <td><textarea name="deskripsi"></textarea></td>
             </tr>
             <tr>
                 <td>Qty</td>

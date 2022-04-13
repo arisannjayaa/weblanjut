@@ -1,4 +1,6 @@
-create table barang(
+create database db_barang;
+
+create table tb_barang(
     id_brg int primary key auto_increment,
     nama_brg varchar(50),
     jenis_brg varchar(50),

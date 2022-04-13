@@ -24,13 +24,13 @@
             <tr>
                 <td>Nama Barang</td>
                 <td>:</td>
-                <td><input type="text" name="nim" value="<?=$key['nama_brg']?>">
+                <td><input type="text" name="nama" value="<?=$key['nama_brg']?>">
                 </td>
             </tr>
             <tr>
                 <td>Jenis Barang</td>
                 <td>:</td>
-                <td><input type="text" name="nama" value="<?=$key['jenis_brg']?>">
+                <td><input type="text" name="jenis" value="<?=$key['jenis_brg']?>">
                 </td>
             </tr>
             <tr>
