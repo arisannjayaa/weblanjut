@@ -4,17 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mahasiswa_model extends CI_Model {
 
-  // ------------------------------------------------------------------------
-
   public function __construct()
   {
     parent::__construct();
   }
 
-  // ------------------------------------------------------------------------
-
-
-  // ------------------------------------------------------------------------
   public function index()
   {
     
@@ -26,7 +20,7 @@ class Mahasiswa_model extends CI_Model {
     $result = $this->db->get('tb_mahasiswa');
     return $result;
   }
-
+  
   public function insertMahasiswa()
   {
     $insert = array(
@@ -40,9 +34,11 @@ class Mahasiswa_model extends CI_Model {
     return $result;
   }
 
-  public function deleteMahasiswa()
+  public function deleteMahasiswa($id)
   {
-    # code...
+    $this->db->where('id_mhs', $id);
+    $result = $this->db->delete('tb_mahasiswa');
+    return $result;
   }
 
   public function editMahasiswa()
@@ -54,14 +50,15 @@ class Mahasiswa_model extends CI_Model {
             'tlp_mhs' => $this->input->post('tlp'),
             'alamat_mhs' => $this->input->post('alamat')
     );
-    $this->db->where('id_mhs', $this->input->post('id_mhs'));
+    $this->db->where('id_mhs', $this->input->post('id'));
     $result = $this->db->update('tb_mahasiswa', $edit);
     return $result;
   }
 
   public function getDetailMahasiswa($id)
   {
-    $result = $this->db->get_where('tb_mahasiswa', array('id_mhs' => $id));
+    $this->db->where('id_mhs', $id);
+    $result = $this->db->get('tb_mahasiswa');
     return $result;
   }
   // ------------------------------------------------------------------------
