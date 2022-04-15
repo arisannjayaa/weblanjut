@@ -13,7 +13,7 @@ class Barang_model extends CI_Model {
 
   public function getBarang()
   {
-    $result = $this->db->get('barang');
+    $result = $this->db->get('tb_barang');
     return $result;
   }
   
@@ -26,18 +26,18 @@ class Barang_model extends CI_Model {
             'qty_brg' => $this->input->post('qty'),
             'harga_brg' => $this->input->post('harga')
     );
-    $result = $this->db->insert('barang', $insert);
+    $result = $this->db->insert('tb_barang', $insert);
     return $result;
   }
 
-  public function deleteBarang($id)
+	public function getDetailBarang($id)
   {
     $this->db->where('id_brg', $id);
-    $result = $this->db->delete('barang');
+    $result = $this->db->get('tb_barang');
     return $result;
   }
 
-  public function editBarang()
+	public function editBarang()
   {
     $edit = array(
           'nama_brg' => $this->input->post('nama'),
@@ -47,14 +47,14 @@ class Barang_model extends CI_Model {
           'harga_brg' => $this->input->post('harga')
     );
     $this->db->where('id_brg', $this->input->post('id'));
-    $result = $this->db->update('barang', $edit);
+    $result = $this->db->update('tb_barang', $edit);
     return $result;
   }
 
-  public function getDetailBarang($id)
+  public function deleteBarang($id)
   {
     $this->db->where('id_brg', $id);
-    $result = $this->db->get('barang');
+    $result = $this->db->delete('tb_barang');
     return $result;
   }
 

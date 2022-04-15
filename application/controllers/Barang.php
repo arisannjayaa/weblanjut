@@ -26,16 +26,16 @@ class Barang extends CI_Controller
     redirect('barang');
   }
 
+	public function ubah($id)
+  {
+    $data['barang'] = $this->Barang_model->getDetailBarang($id);
+    $this->load->view('barang/update', $data);
+  }
+
   public function edit()
   {
     $this->Barang_model->editBarang();
     redirect('barang');
-  }
-  
-  public function ubah($id)
-  {
-    $data['barang'] = $this->Barang_model->getDetailBarang($id);
-    $this->load->view('barang/update', $data);
   }
 
   public function delete($id)
