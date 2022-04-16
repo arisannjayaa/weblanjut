@@ -8,3 +8,5 @@ create table tb_barang(
     qty_brg int,
     harga_brg float
 );
+
+create
