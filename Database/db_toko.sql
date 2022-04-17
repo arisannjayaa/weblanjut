@@ -9,4 +9,3 @@ create table tb_barang(
     harga_brg float
 );
 
-create
