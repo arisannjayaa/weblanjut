@@ -11,36 +11,33 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row vh-100 justify-content-center align-items-center">
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="<?=base_url('session/login')?>" method="post">
+    <form action="<?=base_url('auth/user')?>" method="post">
+        <div class="container">
+            <div class="row justify-content-center align-items-center vh-100">
+                <div class="col-3">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <h4 class="text-center">Login</h4>
                             <div class="mb-3">
-                                <h4 class="text-center">Login</h4>
+                                <label class="form-label">Username</label>
+                                <input type="text" class="form-control" name="user">
                             </div>
                             <div class="mb-3">
-                                <input class="form-control" type="text" name="user" placeholder="Username">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" name="pass">
                             </div>
-                            <div class="mb-3">
-                                <input class="form-control" type="text" name="pass" placeholder="Password">
+                            <div class="mb-3 d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
                             </div>
-                            <div class="d-grid">
-                                <button class="btn btn-primary" type="submit">Login</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 </body>
-
-
-
 
 </html>
