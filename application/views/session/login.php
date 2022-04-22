@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row vh-100 justify-content-center align-items-center">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card">
                     <div class="card-body">
                         <form action="<?=base_url('session/login')?>" method="post">
