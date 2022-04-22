@@ -54,4 +54,5 @@ $route['hdata'] = 'home/home_data';
 $route['model'] = 'home/getModel';
 $route['mahasiswa'] = 'mahasiswa';
 $route['404_override'] = 'home/error';
+$route['user'] = 'login/user';
 $route['translate_uri_dashes'] = FALSE;
