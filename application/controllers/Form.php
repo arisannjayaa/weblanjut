@@ -10,7 +10,6 @@ class Form extends CI_Controller
 	$this->load->model('Form_model');
   }
   
-
   public function index()
   {
     $this->load->view('validasi/form');
