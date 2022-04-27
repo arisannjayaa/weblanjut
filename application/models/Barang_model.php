@@ -17,27 +17,27 @@ class Barang_model extends CI_Model {
 			[
 				'field' => 'nama',
 				'label'	=> 'Nama',
-				'rules' => 'required|max_length[32]'
+				'rules' => 'required|max_length[50]'
 			],
 			[
 				'field' => 'jenis',
 				'label'	=> 'Jenis',
-				'rules' => 'required'
+				'rules' => 'required|max_length[50]'
 			],
 			[
 				'field' => 'deskripsi',
 				'label'	=> 'Deskripsi',
-				'rules' => 'required'
+				'rules' => 'required|max_length[50]'
 			],
 			[
 				'field' => 'qty',
 				'label'	=> 'Qty',
-				'rules' => 'required'
+				'rules' => 'required|integer'
 			],
 			[
 				'field' => 'harga',
 				'label'	=> 'Harga',
-				'rules' => 'required'
+				'rules' => 'required|integer'
 			],
 		];
 	}

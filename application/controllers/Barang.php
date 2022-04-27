@@ -24,7 +24,6 @@ class Barang extends CI_Controller
   public function add() {
 		$rules = $this->Barang_model->validation();
 		$this->form_validation->set_rules($rules);
-
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('barang/tambah');
 		} else {
