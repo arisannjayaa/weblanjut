@@ -18,26 +18,31 @@
                 <td>Nama Barang</td>
                 <td>:</td>
                 <td><input type="text" name="nama"></td>
+				<td style="color: red;" colspan="3"><?=form_error('nama')?></td>
             </tr>
             <tr>
                 <td>Jenis</td>
                 <td>:</td>
                 <td><input type="text" name="jenis"></td>
+				<td style="color: red;" colspan="3"><?=form_error('jenis')?></td>
             </tr>
             <tr>
                 <td>Deskripsi</td>
                 <td>:</td>
                 <td><textarea name="deskripsi"></textarea></td>
+				<td style="color: red;" colspan="3"><?=form_error('deskripsi')?></td>
             </tr>
             <tr>
                 <td>Qty</td>
                 <td>:</td>
                 <td><input type="text" name="qty"></td>
+				<td style="color: red;" colspan="3"><?=form_error('qty')?></td>
             </tr>
             <tr>
                 <td>Harga</td>
                 <td>:</td>
                 <td><input type="text" name="harga"></td>
+				<td style="color: red;" colspan="3"><?=form_error('harga')?></td>
             </tr>
             <td><a href="<?=base_url('barang')?>"><button type="button">Kembali</button>
             </td></a>

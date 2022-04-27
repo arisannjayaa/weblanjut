@@ -22,8 +22,15 @@ class Barang extends CI_Controller
   }
 
   public function add() {
-    $this->Barang_model->insertBarang();
-    redirect('barang');
+		$rules = $this->Barang_model->validation();
+		$this->form_validation->set_rules($rules);
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('barang/tambah');
+		} else {
+			$this->Barang_model->insertBarang();
+			redirect('barang');
+		}
   }
 
 	public function ubah($id)
@@ -32,10 +39,17 @@ class Barang extends CI_Controller
     $this->load->view('barang/update', $data);
   }
 
-  public function edit()
+  public function edit($id)
   {
-    $this->Barang_model->editBarang();
-    redirect('barang');
+		$rules = $this->Barang_model->validation();
+		$this->form_validation->set_rules($rules);
+		if ($this->form_validation->run() == FALSE) {
+				$data['barang'] = $this->Barang_model->getDetailBarang($id);
+				$this->load->view('barang/update', $data);
+		} else {
+			$this->Barang_model->editBarang();
+			redirect('barang');
+		}
   }
 
   public function delete($id)

@@ -11,6 +11,37 @@ class Barang_model extends CI_Model {
     parent::__construct();
   }
 
+	public function validation()
+	{
+		return [
+			[
+				'field' => 'nama',
+				'label'	=> 'Nama',
+				'rules' => 'required|max_length[32]'
+			],
+			[
+				'field' => 'jenis',
+				'label'	=> 'Jenis',
+				'rules' => 'required'
+			],
+			[
+				'field' => 'deskripsi',
+				'label'	=> 'Deskripsi',
+				'rules' => 'required'
+			],
+			[
+				'field' => 'qty',
+				'label'	=> 'Qty',
+				'rules' => 'required'
+			],
+			[
+				'field' => 'harga',
+				'label'	=> 'Harga',
+				'rules' => 'required'
+			],
+		];
+	}
+
   public function getBarang()
   {
     $result = $this->db->get('tb_barang');
