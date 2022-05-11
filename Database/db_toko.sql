@@ -9,3 +9,11 @@ create table tb_barang(
     harga_brg float
 );
 
+
+create table tb_pembeli(
+	id_cart int primary key auto_increment,
+	nama_cart varchar(50),
+	alamat_cart varchar(40),
+	telp_cart varchar(20),
+	harga_cart float
+);
