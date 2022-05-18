@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-
-class Barang_model extends CI_Model
+class Komputer_model extends CI_Model
 {
 
 	// ------------------------------------------------------------------------
@@ -12,7 +11,7 @@ class Barang_model extends CI_Model
 		parent::__construct();
 	}
 
-	public function validation()
+	public function validationBarang()
 	{
 		return [
 			[
@@ -43,6 +42,10 @@ class Barang_model extends CI_Model
 		];
 	}
 
+	public function login()
+	{
+	}
+
 	public function getBarang()
 	{
 		$result = $this->db->get('tb_barang');
@@ -52,11 +55,11 @@ class Barang_model extends CI_Model
 	public function insertBarang()
 	{
 		$insert = array(
-			'nama_brg' => $this->input->post('nama'),
-			'jenis_brg' => $this->input->post('jenis'),
-			'deskripsi_brg' => $this->input->post('deskripsi'),
-			'qty_brg' => $this->input->post('qty'),
-			'harga_brg' => $this->input->post('harga')
+			'nama_barang' => $this->input->post('nama'),
+			'jenis_barang' => $this->input->post('jenis'),
+			'deskripsi_barang' => $this->input->post('deskripsi'),
+			'qty_barang' => $this->input->post('qty'),
+			'harga_barang' => $this->input->post('harga')
 		);
 		$result = $this->db->insert('tb_barang', $insert);
 		return $result;
@@ -64,7 +67,7 @@ class Barang_model extends CI_Model
 
 	public function getDetailBarang($id)
 	{
-		$this->db->where('id_brg', $id);
+		$this->db->where('id_barang', $id);
 		$result = $this->db->get('tb_barang');
 		return $result;
 	}
@@ -72,27 +75,35 @@ class Barang_model extends CI_Model
 	public function editBarang()
 	{
 		$edit = array(
-			'nama_brg' => $this->input->post('nama'),
-			'jenis_brg' => $this->input->post('jenis'),
-			'deskripsi_brg' => $this->input->post('deskripsi'),
-			'qty_brg' => $this->input->post('qty'),
-			'harga_brg' => $this->input->post('harga')
+			'nama_barang' => $this->input->post('nama'),
+			'jenis_barang' => $this->input->post('jenis'),
+			'deskripsi_barang' => $this->input->post('deskripsi'),
+			'qty_barang' => $this->input->post('qty'),
+			'harga_barang' => $this->input->post('harga')
 		);
-		$this->db->where('id_brg', $this->input->post('id'));
+		$this->db->where('id_barang', $this->input->post('id'));
 		$result = $this->db->update('tb_barang', $edit);
 		return $result;
 	}
 
 	public function deleteBarang($id)
 	{
-		$this->db->where('id_brg', $id);
+		$this->db->where('id_barang', $id);
 		$result = $this->db->delete('tb_barang');
 		return $result;
 	}
 
-	// ------------------------------------------------------------------------
+	public function addSession()
+	{
+		$array = array(
+			'user' => $this->input->post('user'),
+			'pass' => $this->input->post('pass')
+		);
 
+		$result = $this->session->set_userdata($array);
+		return $result;
+	}
 }
 
-/* End of file Barang_model.php */
-/* Location: ./application/models/Barang_model.php */
+/* End of file Komputer_model.php */
+/* Location: ./application/models/Komputer_model.php */
