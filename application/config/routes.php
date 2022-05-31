@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -55,4 +55,5 @@ $route['model'] = 'home/getModel';
 $route['mahasiswa'] = 'mahasiswa';
 $route['404_override'] = 'home/error';
 $route['user'] = 'login/user';
+$route['toko/dashboard'] = 'toko';
 $route['translate_uri_dashes'] = FALSE;
