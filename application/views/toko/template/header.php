@@ -22,13 +22,19 @@
 		<div class="border-end bg-white" id="sidebar-wrapper">
 			<div class="sidebar-heading fw-normal">Toko <span class="text-primary fw-bolder">Keranjang</span></div>
 			<div class="list-group list-group-flush">
-				<a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url('toko/dashboard') ?>">Dashboard</a>
+				<a class="list-group-item list-group-item-action list-group-item-light p-3 <?php if ($menu == 'dashboard') {
+																								echo 'active';
+																							} ?>" href="<?= base_url('toko/dashboard') ?>">Dashboard</a>
 			</div>
 			<div class="list-group list-group-flush">
-				<a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url('toko/cart') ?>">Keranjang</a>
+				<a class="list-group-item list-group-item-action list-group-item-light p-3 <?php if ($menu == 'cart') {
+																								echo 'active';
+																							} ?>" href="<?= base_url('toko/cart') ?>">Keranjang</a>
 			</div>
 			<div class="list-group list-group-flush">
-				<a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= base_url('toko/barang') ?>">Data Barang</a>
+				<a class="list-group-item list-group-item-action list-group-item-light p-3 <?php if ($menu == 'barang') {
+																								echo 'active';
+																							} ?>" href="<?= base_url('toko/barang') ?>">Data Barang</a>
 			</div>
 		</div>
 		<!-- Page content wrapper-->

@@ -39,7 +39,7 @@
 			</div>
 			<div class="modal-footer">
 				<a href="<?= base_url('toko/deleteallcart') ?>"><button type="button" class="btn btn-danger">Hapus Semua</button></a>
-				<a href="<?= base_url('toko/updatecart') ?>"><button type="button" class="btn btn-primary">Checkout</button></a>
+				<a href="<?= base_url('toko/checkout') ?>"><button type="button" class="btn btn-primary">Checkout</button></a>
 			</div>
 		</div>
 	</div>

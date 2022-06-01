@@ -14,7 +14,8 @@ class Toko extends CI_Controller
 	{
 		$data = [
 			'title' => 'Toko Keranjang | Dashboard',
-			'barang' => $this->Toko_model->read()->result_array()
+			'barang' => $this->Toko_model->read()->result_array(),
+			'menu' => 'dashboard'
 		];
 		$this->load->view('toko/template/header', $data);
 		$this->load->view('toko/dashboard', $data);
@@ -24,8 +25,9 @@ class Toko extends CI_Controller
 	public function cart()
 	{
 		$data = [
-			'title' => 'Toko Keranjang | Cart',
-			'barang' => $this->Toko_model->read()->result_array()
+			'title' => 'Toko Keranjang | Keranjang',
+			'barang' => $this->Toko_model->read()->result_array(),
+			'menu' => 'cart'
 		];
 		$this->load->view('toko/template/header', $data);
 		$this->load->view('toko/cart', $data);
@@ -36,7 +38,8 @@ class Toko extends CI_Controller
 	{
 		$data = [
 			'title' => 'Toko Keranjang | Data Barang',
-			'barang' => $this->Toko_model->read()->result_array()
+			'barang' => $this->Toko_model->read()->result_array(),
+			'menu' => 'barang'
 		];
 		$this->load->view('toko/template/header', $data);
 		$this->load->view('toko/barang', $data);
@@ -46,7 +49,8 @@ class Toko extends CI_Controller
 	public function add()
 	{
 		$data = [
-			'title' => 'Toko Keranjang | Tambah Data Barang'
+			'title' => 'Toko Keranjang | Tambah Data Barang',
+			'menu' => 'barang'
 		];
 		$this->load->view('toko/template/header', $data);
 		$this->load->view('toko/add');
@@ -69,7 +73,8 @@ class Toko extends CI_Controller
 	{
 		$data = [
 			'title' => 'Toko Keranjang | Edit Data Barang',
-			'barang' => $this->Toko_model->get($id)
+			'barang' => $this->Toko_model->get($id),
+			'menu' => 'barang'
 		];
 		$this->load->view('toko/template/header', $data);
 		$this->load->view('toko/edit', $data);
@@ -94,6 +99,15 @@ class Toko extends CI_Controller
 			'options' 	=> array('description' => $barang[0]['deskripsi_brg'])
 		);
 		$this->cart->insert($data);
+		redirect('toko/cart');
+	}
+
+	public function checkout()
+	{
+		foreach ($this->cart->contents() as $cart) {
+			$this->db->query("update tb_barang set qty_brg=qty_brg-'$cart[qty]' where id_brg='$cart[id]'");
+		}
+		$this->cart->destroy();
 		redirect('toko/cart');
 	}
 

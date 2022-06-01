@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Toko_model extends CI_Model
 {
+	public function validation()
+	{
+	}
+
 	public function read()
 	{
 		$query = $this->db->get('tb_barang');
