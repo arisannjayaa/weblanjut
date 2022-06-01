@@ -59,8 +59,20 @@ class Toko extends CI_Controller
 
 	public function insert()
 	{
-		$this->Toko_model->create();
-		redirect('toko/barang');
+		$rules = $this->Toko_model->validation();
+		$this->form_validation->set_rules($rules);
+		if ($this->form_validation->run() == FALSE) {
+			$data = [
+				'title' => 'Toko Keranjang | Tambah Data Barang',
+				'menu' => 'barang'
+			];
+			$this->load->view('toko/template/header', $data);
+			$this->load->view('toko/add');
+			$this->load->view('toko/template/footer');
+		} else {
+			$this->Toko_model->create();
+			redirect('toko/barang');
+		}
 	}
 
 	public function remove($id)
@@ -81,10 +93,23 @@ class Toko extends CI_Controller
 		$this->load->view('toko/template/footer');
 	}
 
-	public function update()
+	public function update($id)
 	{
-		$this->Toko_model->edit();
-		redirect('toko/barang');
+		$rules = $this->Toko_model->validation();
+		$this->form_validation->set_rules($rules);
+		if ($this->form_validation->run() == FALSE) {
+			$data = [
+				'title' => 'Toko Keranjang | Edit Data Barang',
+				'barang' => $this->Toko_model->get($id),
+				'menu' => 'barang'
+			];
+			$this->load->view('toko/template/header', $data);
+			$this->load->view('toko/edit', $data);
+			$this->load->view('toko/template/footer');
+		} else {
+			$this->Toko_model->edit();
+			redirect('toko/barang');
+		}
 	}
 
 	public function addcart($id)

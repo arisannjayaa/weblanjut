@@ -5,6 +5,33 @@ class Toko_model extends CI_Model
 {
 	public function validation()
 	{
+		return [
+			[
+				'field' => 'nama',
+				'label'	=> 'Nama',
+				'rules' => 'required|max_length[50]'
+			],
+			[
+				'field' => 'jenis',
+				'label'	=> 'Jenis',
+				'rules' => 'required|max_length[50]'
+			],
+			[
+				'field' => 'deskripsi',
+				'label'	=> 'Deskripsi',
+				'rules' => 'required|max_length[50]'
+			],
+			[
+				'field' => 'qty',
+				'label'	=> 'Qty',
+				'rules' => 'required|integer'
+			],
+			[
+				'field' => 'harga',
+				'label'	=> 'Harga',
+				'rules' => 'required|integer'
+			],
+		];
 	}
 
 	public function read()
