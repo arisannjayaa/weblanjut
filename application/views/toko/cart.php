@@ -6,36 +6,38 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<table class="table table-hover">
-					<tr>
-						<td>No</td>
-						<td>Nama Barang</td>
-						<td>Deskripsi</td>
-						<td>Qty</td>
-						<td>Harga</td>
-					</tr>
-					<?php
-					$no = 1;
-					$totalqty = 0;
-					foreach ($this->cart->contents() as $key) {
-						$totalqty += $key['qty'];
-					?>
+				<div class="table-responsive">
+					<table class="table table-hover">
 						<tr>
-							<td><?= $no++ ?></td>
-							<td><?= $key['name'] ?></td>
-							<td><?= $key['options']['description'] ?></td>
-							<td><?= $key['qty'] ?></td>
-							<td><?= "Rp. " . $key['price'] ?></td>
+							<td>No</td>
+							<td>Nama Barang</td>
+							<td>Deskripsi</td>
+							<td>Qty</td>
+							<td>Harga</td>
 						</tr>
-					<?php
-					}
-					?>
-					<tr class="bg-success text-white rounded-3">
-						<td colspan="3">Total</td>
-						<td><?= $totalqty ?></td>
-						<td class="fw-normal"><?= "Rp. " . $this->cart->total() ?></td>
-					</tr>
-				</table>
+						<?php
+						$no = 1;
+						$totalqty = 0;
+						foreach ($this->cart->contents() as $key) {
+							$totalqty += $key['qty'];
+						?>
+							<tr>
+								<td><?= $no++ ?></td>
+								<td><?= $key['name'] ?></td>
+								<td><?= $key['options']['description'] ?></td>
+								<td><?= $key['qty'] ?></td>
+								<td><?= "Rp. " . $key['price'] ?></td>
+							</tr>
+						<?php
+						}
+						?>
+						<tr class="bg-success text-white rounded-3">
+							<td colspan="3">Total</td>
+							<td><?= $totalqty ?></td>
+							<td class="fw-normal"><?= "Rp. " . $this->cart->total() ?></td>
+						</tr>
+					</table>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<a href="<?= base_url('toko/deleteallcart') ?>"><button type="button" class="btn btn-danger">Hapus Semua</button></a>
@@ -58,34 +60,36 @@
 	<div class="col">
 		<div class="card">
 			<div class="card-body">
-				<table class="table table-hover table-responsive">
-					<tr>
-						<td>No</td>
-						<td>Nama Barang</td>
-						<td>Jenis Barang</td>
-						<td>Deskripsi</td>
-						<td>Qty</td>
-						<td>Harga</td>
-						<td>Aksi</td>
-					</tr>
-					<?php
-					$no = 1;
-					foreach ($barang as $key) { ?>
+				<div class="table-responsive">
+					<table class="table table-hover">
 						<tr>
-							<td><?= $no++ ?></td>
-							<td><?= $key['nama_brg'] ?></td>
-							<td><?= $key['jenis_brg'] ?></td>
-							<td><?= $key['deskripsi_brg'] ?></td>
-							<td><?= $key['qty_brg'] ?></td>
-							<td><?= $key['harga_brg'] ?></td>
-							<td>
-								<a href="<?= base_url('toko/addcart/') . $key['id_brg'] ?>" class="btn btn-success"><i class="bi bi-cart"></i></a>
-							</td>
+							<td>No</td>
+							<td>Nama Barang</td>
+							<td>Jenis Barang</td>
+							<td>Deskripsi</td>
+							<td>Qty</td>
+							<td>Harga</td>
+							<td>Aksi</td>
 						</tr>
-					<?php
-					}
-					?>
-				</table>
+						<?php
+						$no = 1;
+						foreach ($barang as $key) { ?>
+							<tr>
+								<td><?= $no++ ?></td>
+								<td><?= $key['nama_brg'] ?></td>
+								<td><?= $key['jenis_brg'] ?></td>
+								<td><?= $key['deskripsi_brg'] ?></td>
+								<td><?= $key['qty_brg'] ?></td>
+								<td><?= $key['harga_brg'] ?></td>
+								<td>
+									<a href="<?= base_url('toko/addcart/') . $key['id_brg'] ?>" class="btn btn-success"><i class="bi bi-cart"></i></a>
+								</td>
+							</tr>
+						<?php
+						}
+						?>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
